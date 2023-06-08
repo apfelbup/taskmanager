@@ -1,0 +1,32 @@
+@import "../../variables.scss";
+
+
+.header{
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 48px;
+    color: $text-color;
+
+    h1{
+        margin-right: 15px;
+    }
+
+    select{
+        padding-right: 35px;
+        @include selections;
+        color: $main-color;
+        background-position: right 0% top 70%;
+        &:hover{
+            opacity: 0.8;
+        }
+        option{
+            font-size: 20px;
+        }
+    }
+
+    .today{
+        color: $main-color;
+    }
+}

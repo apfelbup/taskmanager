@@ -1,0 +1,67 @@
+
+
+$main-color: #AA68C2;
+$text-color: #0F0F0F;
+$block-color:#E9E9E9;
+
+@mixin wrapper {
+    padding: 30px 50px;
+    width: 100%;
+}
+
+@mixin popup {
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .popup {
+        position: relative;
+        max-width: 600px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 70px 40px;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+}
+
+@mixin selections {
+    cursor: pointer;
+    border-radius: 10px;
+    outline: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("../../assets/arr.png");
+    background-repeat: no-repeat;
+    background-position: right 10% top 50%;
+    option{
+        font-weight: 500;
+        background-color: #fff;
+    }
+}
+
+@mixin button{
+    max-width: 350px;
+    width: 100%;
+    transition: opacity, 0.3s;
+    padding: 25px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: $main-color;
+	font-family: 'Familjen Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    color: #fff;
+    &:hover{
+        opacity: .8;
+    }
+}

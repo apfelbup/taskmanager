@@ -1,0 +1,52 @@
+@import "../../variables.scss";
+
+
+.container{
+
+    height: 100vh;
+    max-width: 350px;
+    width: 100%;
+    background-color: $text-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .navigate{
+        max-width: 290px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    nav{
+        text-align: left;
+        font-size: 28px;
+
+        a{
+            padding: 25px 10px;
+            background-color: #191919;
+            border-radius: 10px;
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            &:hover{
+                color: #CDA5DB;
+            }
+        }
+
+    }
+    nav+nav{
+        margin-top: 35px;
+    }
+
+    button{
+        font-size: 28px;
+        cursor: pointer;
+        border: none;
+        background: none;
+        color: #fff;
+        width: fit-content;
+        margin: 0 auto;
+        &:hover{
+            opacity: 0.7;
+        }
+    }
+}

@@ -1,0 +1,58 @@
+@import "../../../variables.scss";
+
+.list{
+    overflow-wrap: break-word;  
+    word-wrap: break-word; 
+    word-break: break-word;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 30px 15px;
+    background-color: $block-color;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    p{
+        font-size: 18px;
+        color: $text-color;
+        font-weight: 500;
+    }
+    span{
+        margin-right: 15px;
+        &::before{
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    .work{
+        background-color: #6CCCA9;
+        border-radius: 100px;
+        -moz-border-radius: 100px;
+        -webkit-border-radius: 100px;
+    }
+    .study{
+        background-color: #BF6CCC;
+        border-radius: 100px;
+        -moz-border-radius: 100px;
+        -webkit-border-radius: 100px;
+    }
+    .hobby{
+        background-color: #6C76CC;
+        border-radius: 100px;
+        -moz-border-radius: 100px;
+        -webkit-border-radius: 100px;
+    }
+    .other{
+        background-color: #CC6C6C;
+        border-radius: 100px;
+        -moz-border-radius: 100px;
+        -webkit-border-radius: 100px;
+    }
+
+
+    &:hover{
+        opacity: 0.7;
+    }
+}

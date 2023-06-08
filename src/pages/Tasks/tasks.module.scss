@@ -1,0 +1,40 @@
+@import "../../variables.scss";
+
+.wrapper{
+    @include wrapper;
+}
+
+.settings{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    button{
+        background: none;
+        cursor: pointer;
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+
+    .types{
+        display: flex;
+        align-items: center;
+        p{
+            color: $main-color;
+            font-weight: 500;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        select{
+            @include selections;
+            width: 150px;
+            font-size: 18px;
+            font-weight: 500;
+            background-color: $block-color;
+            padding: 15px;
+        }
+
+    }
+
+}
