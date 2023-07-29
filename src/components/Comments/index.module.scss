@@ -1,0 +1,10 @@
+@import "../../variables.scss";
+
+.comments{
+
+    &{
+        li+li{
+            margin-top: 20px;
+        }
+    }
+}
