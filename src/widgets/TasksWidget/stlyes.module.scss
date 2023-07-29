@@ -1,0 +1,100 @@
+@import '../../variables.scss';
+
+.tasksWidget { 
+
+    ul{
+        margin-bottom: 35px;
+    }
+
+    .header{
+        display: flex;
+        align-items: center;
+
+        margin-bottom: 30px;
+
+        @media #{$screen-tablet}{
+            margin-bottom: 10px;
+        }
+
+
+        .title{
+            font-size: $title-font-size-small;
+            margin-right: 10px;
+
+            @media #{$screen-desktop}{
+                font-size: $title-font-size-minimal;
+            }
+        }
+    
+        .percent{
+            font-size: $title-font-size-large;
+            text-align: center;
+    
+            color: $main-color;
+
+            @media #{$screen-desktop}{
+                font-size: $title-font-size-small;
+            }
+    
+        }
+    }
+
+    .progressBox{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+
+    .taskType{
+        font-weight: $font-weight-medium;
+        font-size: $text-font-size-medium;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        min-width: 220px;
+
+        margin-bottom: 10px;
+
+        padding: 20px 20px;
+
+        border-radius: $border-radius-medium;
+
+        background-color: $block-color;
+
+        @media #{$screen-mobile}{
+            font-size: $text-font-size-small;
+        }
+
+        .leftSide{
+            display: flex;
+            align-items: center;
+
+            .typeColor{
+                width: 30px;
+                height: 30px;
+
+                margin-right: 10px;
+
+                border-radius: 100px;
+
+                @media #{$screen-mobile}{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+
+    }
+
+    .progress{
+        font-size: $text-font-size-huge;
+        font-weight: 600;
+
+        @media #{$screen-mobile}{
+            font-size: $text-font-size-large;
+        }
+    }
+}

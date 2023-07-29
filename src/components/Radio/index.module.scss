@@ -1,0 +1,44 @@
+@import '../../variables.scss';
+
+.radio{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3px;
+}
+.radioLabel{
+    cursor: pointer;
+    padding: 10px 0;
+
+
+    span{
+        font-size: $text-font-size-small;
+        font-weight: $font-weight-small;
+        white-space: nowrap;
+
+        transition: all, 0.2s;
+
+        padding: 10px;
+
+        border-radius: $border-radius-medium;
+        background-color: $block-color;
+
+        &:hover{
+            background-color: $grey;
+        }
+        &:active{
+            background-color: $grey-dark;
+        }
+
+        @media #{$screen-mobile}{
+            font-size: $text-font-size-minimal;
+            padding: 5px;
+        }
+    }
+    input{
+        display: none;
+    }
+
+    :checked + span {
+            background-color: $grey; 
+    }
+}

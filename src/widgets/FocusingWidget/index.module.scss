@@ -1,0 +1,69 @@
+@import "../../variables.scss";
+
+.focusWidget{ 
+    height:fit-content;
+    max-width: 100%;
+    width: auto;
+
+    padding: 30px 30px 40px 30px;
+
+    grid-area: focusing;
+
+    border-radius: $border-radius-medium;
+
+    box-shadow: $box-shadow-light;
+
+    @media #{$screen-desktop-large}{
+        padding: 30px 20px 40px 20px;
+    }
+
+    @media #{$screen-desktop}{
+        padding: 20px 10px;
+    }
+
+
+    .heading{
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        min-height: 20px;
+
+        margin-bottom: 20px;
+
+
+        @media #{$screen-desktop-large}{
+            gap: 5px;
+        }
+
+        @media #{$screen-tablet}{
+            height: auto;
+        }
+
+
+
+        @media #{$screen-mobile}{
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .title{
+            font-size: $text-font-size-medium;
+
+            @media #{$screen-desktop-large}{
+                font-size: $text-font-size-small;
+                width: min-content;
+            }
+
+            @media #{$screen-desktop}{
+                width: auto;
+            }
+
+            @media #{$screen-mobile}{
+                max-width: fit-content;
+                width: 100%;
+            }
+        }
+    }
+}
