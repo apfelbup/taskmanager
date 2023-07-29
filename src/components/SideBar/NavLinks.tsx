@@ -1,22 +1,32 @@
-import { links } from "../../assets/constants";
-import { NavLink } from "react-router-dom";
 import styles from "./sideBar.module.scss";
+import { useWindowResize } from "../../hooks/useWindowResize";
+
+import { NavLink } from "react-router-dom";
+
+import { LINKS } from "../../assets/constants";
 
 
-const NavLinks = () => (
+
+
+
+const NavLinks = () => {
+    const size = useWindowResize();
+
+    return(
         <div className={styles.navigate}>
-        {links.map((item)=>(
+        {LINKS.map((item)=>(
             <nav key={item.name}>
             <NavLink
             to={item.to}
             style={({ isActive }) => {return {color: isActive ? "#AA68C2" : ""}}}
             >
-            {item.name}
+            {size > 1024 ? item.name : <item.icon/>}
             </NavLink>
             </nav>
         ))}
 
         </div>
-    );
+        )
+    };
 
 export default NavLinks

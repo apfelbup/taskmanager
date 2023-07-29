@@ -1,26 +1,24 @@
-import { useAppSelector } from "../../hooks/reduxhooks";
-import NavLinks from "./NavLinks";
 import styles from "./sideBar.module.scss"
+
+import Focusing from "../../pages/Focusing";
+import Profile from "../Profile";
+import NavLinks from "./NavLinks";
+
+
 
 
 
 
 const SideBar = () => {
-    const pageType = useAppSelector(state => state.timer.pageType);
 
-    if(pageType === "selection"){
         return(
-            <div className={styles.container}>
-                <NavLinks/>
-                <button>
-                    Выйти
-                </button>
-            </div>
-        )
-    } else{
-        return null
-    }
 
+                <div className={styles.sidebar}>
+                <Profile/>
+                <Focusing/>
+                <NavLinks/>
+                </div>
+        )
 }
 
 export default SideBar;

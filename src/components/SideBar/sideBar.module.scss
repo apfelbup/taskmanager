@@ -1,52 +1,112 @@
 @import "../../variables.scss";
 
 
-.container{
+    .sidebar{
+        position: fixed;
+        z-index: $z-index-menu;
 
-    height: 100vh;
-    max-width: 350px;
-    width: 100%;
-    background-color: $text-color;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+        display: flex;
+        flex-direction: column;
+        gap: 70px;
+
+        max-width: $sidebar-size-desktop-large;
+        width: 100%;
+        height: 100vh;
+
+        padding: 80px 20px;
+
+        background-color: $text-color;
+
+        @media #{$screen-desktop-large}{
+            max-width: $sidebar-size-desktop;
+            gap: 60px;
+        }
+
+        @media #{$screen-desktop}{
+            max-width: $sidebar-size-tablet;
+            gap: 40px;
+            padding: 20px;
+        }
+
+        @media #{$screen-mobile}{
+            width: 60px;
+            padding: 20px 10px;
+        }
+    }
 
     .navigate{
         max-width: 290px;
         width: 100%;
+
         margin: 0 auto;
     }
     nav{
+        font-size: $font-size-xl;
         text-align: left;
-        font-size: 28px;
+
+        @media #{$screen-desktop-large}{
+            font-size: $font-size-l;
+            text-align: center;
+        }
 
         a{
-            padding: 25px 10px;
-            background-color: #191919;
-            border-radius: 10px;
+            @include button;
+
             display: block;
-            color: #fff;
+            
+            width: auto;
+
+            padding: 25px 10px;
+
+            color: $white;
             text-decoration: none;
+
+            border-radius: $border-radius-medium;
+
+            background-color: #191919;
+
             &:hover{
-                color: #CDA5DB;
+                color: $element-hover;
+            }
+
+            @media #{$screen-desktop}{
+                padding: 20px 10px;
+            }
+
+            @media #{$screen-mobile}{
+                padding: 10px;
             }
         }
 
     }
     nav+nav{
         margin-top: 35px;
-    }
 
-    button{
-        font-size: 28px;
-        cursor: pointer;
-        border: none;
-        background: none;
-        color: #fff;
-        width: fit-content;
-        margin: 0 auto;
-        &:hover{
-            opacity: 0.7;
+        @media #{$screen-desktop}{
+            margin-top: 15px;
         }
     }
-}
+
+    .logout{
+        @include button;
+
+        font-size: $font-size-xl;
+
+        width: fit-content;
+
+        margin: 0 auto;
+
+        border: none;
+        
+        background: none;
+
+        @media #{$screen-desktop}{
+            font-size: $font-size-m;
+
+            padding: 0;
+        }
+
+        @media #{$screen-mobile}{
+            font-size: $font-size-s;
+        }
+    }
