@@ -1,0 +1,87 @@
+@import "../../variables.scss";
+
+.wrapper{
+    @include wrapper;
+
+    @media #{$screen-tablet}{
+        padding: 20px 0;
+    }
+}
+
+.box{
+    @include container;
+
+    @media #{$screen-tablet}{
+        padding: 0 15px;
+    }
+}
+
+.pageContent {
+    display: flex;
+    justify-content: space-between;
+
+    @media #{$screen-desktop}{
+        flex-direction: column-reverse;
+    }
+
+    .control{
+        h3 {
+            font-size: $title-font-size-medium;
+            margin-bottom: 20px;
+
+            @media #{$screen-mobile}{
+                text-align: center;
+            }
+        }
+    }
+}
+
+.title{
+    font-size: $title-font-size-medium;
+
+    margin-bottom: 20px;
+
+    @media #{$screen-mobile}{
+        text-align: center;
+    }
+}
+
+.readingNow{
+    margin-bottom: 50px;
+}
+
+.bookBox{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    width: 480px;
+
+    @media #{$screen-desktop-large}{
+        width: 400px;
+    }
+
+    @media #{$screen-desktop}{
+        width: 100%;
+    }
+
+    @media #{$screen-mobile}{
+        justify-content: center;
+    }
+}
+
+.header{
+    display: flex;
+    align-items:flex-start;
+}
+.create{
+    @include button;
+    padding: 10px;
+
+    height: auto;
+    width: auto;
+
+    @media #{$screen-tablet}{
+        font-size: $text-font-size-medium;
+    }
+}

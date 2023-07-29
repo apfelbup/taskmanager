@@ -1,0 +1,10 @@
+@import "../../../variables.scss";
+
+
+.star{
+    cursor: pointer;
+
+    svg:active{
+        fill: $element-hover;
+    }
+}

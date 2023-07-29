@@ -1,0 +1,30 @@
+@import '../../variables.scss';
+
+.container{
+    @include popup;
+
+
+
+    .popup{
+        position: relative;
+        padding: 40px;
+
+        @media #{$screen-desktop}{
+            max-width: 400px;
+
+            padding: 30px;
+        }
+
+        @media #{$screen-tablet}{
+            max-width: 350px;
+        }
+
+        @media #{$screen-mobile}{
+            max-width: 280px;
+
+            padding: 20px;
+        }
+        
+
+    }
+}

@@ -1,15 +1,45 @@
-
+@import '../../../variables.scss';
 
 .container {
 
-    max-width: 300px;
+    width: 150px;
+
+    @media #{$screen-desktop-large}{
+        width: 110px;
+    }
+
+    @media #{$screen-desktop}{
+        width: 35%;
+    }
+
     .status{
+        font-size: $text-font-size-medium;
+
         margin-bottom: 30px;
-        font-size: 28px;
-        color: #CDA5DB;
+
+        color: $purple-dull;
+
+        @media #{$screen-desktop-large}{
+            font-size: $text-font-size-small;
+            margin-bottom: 20px;
+        }
+
+        @media #{$screen-desktop}{
+            font-size: $text-font-size-medium;
+            text-align: center;
+        }
+
+        @media #{$screen-tablet}{
+            font-size: $text-font-size-small;
+        }
+
+        @media #{$screen-mobile}{
+            font-size: $text-font-size-minimal;
+            margin-bottom: 10px;
+        }
 
     }
     ul{
-        height: 60vh;
+        height: 30vh;
     }
 }

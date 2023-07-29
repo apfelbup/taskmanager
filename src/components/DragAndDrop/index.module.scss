@@ -1,6 +1,23 @@
+@import '../../variables.scss';
+
 .grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
     gap: 30px;
     overflow-y: auto;
+
+    @media #{$screen-desktop-large}{
+        gap: 10px;
+    }
+
+    @media #{$screen-desktop}{
+        gap: 40px;
+    }
+
+    @media #{$screen-tablet}{
+        gap: 10px;
+    }
+
+    @media #{$screen-mobile}{
+        gap: 5px;
+    }
 }

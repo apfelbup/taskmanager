@@ -1,51 +1,41 @@
 import styles from './index.module.scss';
-import { Data } from '../../../interfaces';
-import CardItem from '../CardItem';
-import React from 'react';
+
 import {  Droppable } from 'react-beautiful-dnd';
+import {book} from '../../../interfaces';
+
+import CardItem from '../CardItem';
+
+
 interface ICardsContainer {
-    status: any;
-    items:any;
-    filterValue:string
+    status: string;
+    items: Array<book>;
 }
 
 
-const CardsContainer = ({status, items,filterValue}:ICardsContainer) => {
-    console.log('CardsContainer')
+const CardsContainer = ({status, items}:ICardsContainer) => { 
 
 
     return (
-        <div className={styles.container}
-        >
+        <div className={styles.container}>
         <p className={styles.status}>{status}</p>
         <Droppable droppableId={status}>
             {
                 (provided)=>(
                     <ul ref={provided.innerRef} {...provided.droppableProps}>
-                    {filterValue === "все" ?
-                    items.map((item: Data, index: any)=> {
-                    return (
-                    status === item.status
-                    && <CardItem
-                        data={item}
-                        id={item.id}
-                        key={item.id}
-                        type={item.type}
-                        index={index} />
-                            );
+                        {
+                            items.map((item:book, index:number) => {
+                                return (
+                                    status === item.status 
+                                    && <CardItem
+                                            name = {item.name}
+                                            id={item.id}
+                                            key = {item.id}
+                                            index = {index}
+                                        />
+                                )
                             })
-                    : items.filter((item:Data)=> item.type === filterValue).map((item: Data, index: any)=> {
-                            return (
-                                status === item.status
-                                && <CardItem
-                                    data={item}
-                                    id={item.id}
-                                    key={item.id}
-                                    type={item.type}
-                                    index={index} />
-                            );
-                        })
-                    }
+                        }
+
                     {provided.placeholder}
                     </ul>
                 )
