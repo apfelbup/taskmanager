@@ -31,6 +31,16 @@ time, mark, audio, video, button, select, option {
 	font-weight: 600;
 	color: #0F0F0F;
 }
+
+textarea{
+	font-family: 'Familjen Grotesk', sans-serif;
+}
+
+textarea::placeholder {
+	font-family: 'Familjen Grotesk', sans-serif;
+	letter-spacing: 0.7px;
+  }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
