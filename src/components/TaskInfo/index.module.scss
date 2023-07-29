@@ -1,0 +1,283 @@
+@import '../../variables.scss';
+
+.disabled{
+    font-size: $title-font-size-large;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100vh;
+
+    color: $grey;
+
+    @media #{$screen-mobile}{
+        font-size: $title-font-size-medium;
+    }
+
+}
+
+.taskinfo{
+    display: flex;
+    flex-direction: column;
+
+    max-height: 100vh;
+
+    width: 100%;
+
+    @media #{$screen-tablet}{
+        max-height: none;
+    }
+}
+
+.container{
+    @include wrapper;
+
+    flex-grow: 1;
+
+    width:auto;
+
+    margin: 0;
+
+    overflow: auto;
+
+    @media #{$screen-tablet}{
+        overflow: hidden;
+    }
+}
+.heading{
+    display: flex;
+    justify-content:end;
+    align-items: center;
+
+    .settings{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @media #{$screen-tablet}{
+            gap: 10px;
+        }
+
+        .completed{
+            color: $main-color;
+        }
+
+        button{
+            @include button;
+
+            font-size: $font-size-normal;
+
+            width: 40px;
+            height: 40px;
+    
+            padding: 0px;
+    
+            color: $grey-dark;
+    
+            background-color: transparent;
+
+            @media #{$screen-tablet}{
+                width: 30px;
+                height: 30px;
+            }
+        }
+        
+
+            div{
+                border: none;
+            }
+
+
+    }
+}
+
+.name{
+    margin-bottom: 60px;
+
+    @media #{$screen-tablet}{
+        margin-bottom: 40px;
+    }
+
+    h2{
+        font-size: $title-font-size-medium;
+        word-break: break-all;
+        margin-bottom: 10px;
+
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+
+        @media #{$screen-tablet}{
+            font-size: $title-font-size-minimal;
+        }
+    }
+
+    span{
+        font-weight: $font-weight-small;
+
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        color: $grey;
+
+        @media #{$screen-tablet}{
+            font-size: $text-font-size-small;
+        }
+    }
+}
+
+.content{
+    margin-bottom: 60px;
+
+
+
+    @media #{$screen-tablet}{
+        margin-bottom: 40px;
+    }
+
+    p{
+        font-family: $font-family-custom;
+        font-weight: $font-weight-small;
+        line-height: 24px;
+
+        white-space: pre-line;
+        word-break:break-all;
+
+
+        color: $grey-dark;
+
+        @media #{$screen-tablet}{
+            font-size: $text-font-size-small;
+            line-height: 20px;
+        }
+    }
+}
+
+.info{
+    position: relative;
+
+    font-weight: $font-weight-small;
+    font-size: $text-font-size-small;
+
+    display: flex;
+    gap: 10px;
+
+    margin-bottom: 50px;
+
+    @media #{$screen-tablet}{
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    &::after{
+        position: absolute;
+        bottom: -25px;
+        
+        display: block;
+
+        content: '';
+
+        width: 100%;
+        height: 1px;
+        background-color: $grey;
+    }
+
+    span{
+        font-weight: $font-weight-small;
+
+        color: $grey-dark;
+    }
+    
+}
+
+.progress{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.completedStatus{
+    display: flex;
+    gap: 10px;
+
+    color: $main-color;
+
+    @media #{$screen-tablet}{
+        flex-direction: column;
+        gap: 5px;
+
+        margin-bottom: 30px;
+    }
+
+    span{
+        color: $main-color;
+
+        @media #{$screen-tablet}{
+            font-weight: $font-weight-small;
+            color: $grey;
+        }
+    }
+}
+
+.commentsBlock{
+    position: relative;
+
+    padding-top: 20px;
+
+    &::before{
+        position: absolute;
+        top: 0;
+
+        display: block;
+
+        width: 100%;
+        height: 1px;
+
+        content: '';
+
+        background-color: $grey-dark;
+    }
+}
+
+
+.form{
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+
+    button{
+
+        width: fit-content;
+
+        padding: 20px;
+
+        color: $white;
+
+        cursor: pointer;
+
+        border-radius: 0;
+        outline: none;
+
+        background-color: $main-color;
+    }
+}
+
+.textarea{
+    @include textarea;
+
+    height: 60px;
+    
+    border-radius: 0;
+
+    @media #{$screen-tablet}{
+        font-size: $text-font-size-small;
+    }
+
+}

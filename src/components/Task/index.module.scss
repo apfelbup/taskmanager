@@ -1,0 +1,108 @@
+@import '../../variables.scss';
+
+.task{
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    padding: 30px;
+
+    @media #{$screen-desktop}{
+        padding: 20px;
+    }
+
+    cursor: pointer;
+
+    border: 1px solid #E0E0E0;
+
+    &:hover{
+        background-color: #F1EFEF;
+    }
+
+    &:active{
+        background-color: #E1E1E1;
+    }
+
+    @media #{$screen-desktop-large}{
+        gap: 10px;
+    }
+
+    &Active{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    
+        padding: 30px;
+    
+        cursor: pointer;
+    
+        box-shadow: 0px 5px 30px 5px rgba(100, 100, 100, 0.35); 
+
+        @media #{$screen-desktop-large}{
+            gap: 10px;
+        }
+
+        @media #{$screen-tablet}{
+            padding: 20px;
+        }
+    }
+}
+
+.typeColor{
+    width: 30px;
+    height: 30px;
+
+    margin-left: auto;
+
+    border-radius: 100px;
+
+    @media #{$screen-desktop}{
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.heading{
+    max-width: 300px;
+
+    @media #{$screen-desktop-large}{
+        max-width: 200px;
+    }
+
+    @media #{$screen-desktop}{
+        max-width: 110px;
+    }
+
+    @media #{$screen-tablet}{
+        max-width: 45vw;
+        width: 100%;
+    }
+
+    @media #{$screen-mobile}{
+        max-width: 40vw;
+    }
+
+
+    p{
+        word-wrap: break-word;
+        margin-bottom: 5px;
+
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+
+        @media #{$screen-desktop}{
+            font-size: $text-font-size-small;
+        }
+    }
+    span{
+        font-weight: $font-weight-small;
+        font-size: $text-font-size-minimal;
+
+        color: $grey;
+    }
+}

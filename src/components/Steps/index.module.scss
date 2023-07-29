@@ -1,0 +1,45 @@
+@import '../../variables.scss';
+
+.steps{
+    .create{
+        display: flex;
+
+        margin-bottom: 10px;
+
+        input{
+            font-size: $text-font-size-small;
+
+            padding: 10px;
+    
+            border: none;
+            border-bottom-left-radius: $border-radius-minimal;
+            border-top-left-radius: $border-radius-minimal;
+            outline: none;
+    
+            background: $block-color;
+
+            @media #{$screen-tablet}{
+                width: 100%;
+            }
+        }
+
+        button{
+            padding: 10px 20px;
+
+            color: $white;
+
+            cursor: pointer;
+
+            border-bottom-right-radius: $border-radius-minimal;
+            border-top-right-radius: $border-radius-minimal;
+            
+            background-color: $main-color;
+        }
+    }
+
+    &List{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}

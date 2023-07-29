@@ -2,31 +2,22 @@
 
 
 .header{
-    margin-bottom: 60px;
+    font-weight: $font-weight-large;
+    font-size: $title-font-size-large;
+
     display: flex;
     align-items: center;
-    font-weight: 600;
-    font-size: 48px;
+
+    margin-bottom: 60px;
+
     color: $text-color;
+
+    @media #{$screen-tablet}{
+        font-size: $title-font-size-medium;
+        margin-bottom: 50px;
+    }
 
     h1{
         margin-right: 15px;
-    }
-
-    select{
-        padding-right: 35px;
-        @include selections;
-        color: $main-color;
-        background-position: right 0% top 70%;
-        &:hover{
-            opacity: 0.8;
-        }
-        option{
-            font-size: 20px;
-        }
-    }
-
-    .today{
-        color: $main-color;
     }
 }

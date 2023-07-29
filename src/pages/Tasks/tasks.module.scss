@@ -1,5 +1,16 @@
 @import "../../variables.scss";
 
+.container{
+    @include container;
+    display: flex;
+    
+    width: 100%;
+
+    @media #{$screen-tablet}{
+        flex-direction: column;
+    }
+
+}
 .wrapper{
     @include wrapper;
 }
@@ -8,12 +19,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     margin-bottom: 30px;
+
     button{
-        background: none;
         cursor: pointer;
+
+        background: none;
         &:hover{
-            opacity: 0.8;
+            opacity: $opacity-weak;
         }
     }
 
@@ -21,20 +35,13 @@
         display: flex;
         align-items: center;
         p{
-            color: $main-color;
-            font-weight: 500;
-            font-size: 24px;
-            margin-right: 10px;
-        }
-        select{
-            @include selections;
-            width: 150px;
-            font-size: 18px;
-            font-weight: 500;
-            background-color: $block-color;
-            padding: 15px;
-        }
+            font-weight: $font-weight-medium;
+            font-size: $text-font-size-huge;
 
+            margin-right: 10px;
+
+            color: $main-color;
+        }
     }
 
 }
