@@ -1,0 +1,41 @@
+@import "../../variables.scss";
+
+.wrapper{
+    @include wrapper;
+    max-width: 1300px;
+    margin: 0 auto
+}
+
+.focusing{
+    @include wrapper;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: $z-index-popup;
+
+    padding: 0;
+
+    background-image: url('/gif.gif');
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.btn{
+    @include button;
+
+    align-items: center;
+
+    padding: 15px;
+}
+
+.hidden{
+    display: none;
+}
+
+    .manually{
+        p{
+            padding: 60px 0 60px 0;
+        }
+    }

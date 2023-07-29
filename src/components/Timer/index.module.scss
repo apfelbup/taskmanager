@@ -1,0 +1,87 @@
+@import '../../variables.scss';
+
+
+.timer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: $z-index-popup;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    height: 100vh;
+    width: 100vw;
+
+    padding: 0;
+
+    background-image: url('/gif.gif');
+    background-size:cover;
+    background-repeat: no-repeat;
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        padding: 40px;
+
+        border-radius: $border-radius-medium;
+        background: rgba(0,0,0,0.5);
+        
+        @media #{$screen-tablet}{
+            padding: 20px;
+        }
+    p{
+        font-size: 40px;
+        font-weight: $font-weight-medium;
+
+        color: $white;
+
+        margin-bottom: 60px;
+
+        @media #{$screen-tablet}{
+            font-size: $font-size-l;
+
+            margin-bottom: 40px;
+        }
+
+        span{
+            font-weight: $font-weight-large;
+            font-size: 50px;
+
+            color: $white;
+
+            @media #{$screen-tablet}{
+                font-size: $font-size-xxl;
+            }
+        }
+    }
+    button{
+        font-size: $font-size-xl;
+        font-weight: $font-weight-large;
+
+        padding: 10px 20px;
+        
+        color: $white;
+
+        cursor: pointer;
+
+        border: 3px solid $white;
+        border-radius: $border-radius-medium;
+
+        background: none;
+        &:hover{
+            opacity: $opacity-weak;
+        }
+
+        @media #{$screen-tablet}{
+            font-size: $font-size-l;
+        }
+    }
+    }
+
+}
