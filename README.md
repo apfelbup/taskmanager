@@ -23,6 +23,7 @@
 
 
 ## Демо
+**[Ссылка на лайв-демо](https://64cb6d51bcf93d55f1c3cb59--genuine-llama-3c3f47.netlify.app/)**
 
 Страница задач
 ![image](https://github.com/apfelbup/taskmanager/assets/102802834/5ba52444-aa1d-47e0-82ce-44cbbd8da3f6)
