@@ -14,7 +14,9 @@
 
 ## Описание проекта
 
-**Основной Стек:** React, Router, Redux-toolkit, redux-persist, ts, webpack, scss
+**Основной Стек:** React, Router, Redux-toolkit, redux-persist, ts, webpack, scss, 
+
+**Тесты:** jest, react-testing-library
 
 **Другие библиотеки:** react-select, uuid, formik, react-dnd, react-chartjs
 
