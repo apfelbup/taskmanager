@@ -1,7 +1,7 @@
 import {AiFillBook, AiFillEdit, AiFillFund} from 'react-icons/ai'
 
 export const LINKS = [
-    {name:'Задачи', to:'/tasks', icon: AiFillEdit},
+    {name:'Задачи', to:'/', icon: AiFillEdit},
     {name:'Статистика', to:'/statistic', icon: AiFillFund},
     {name:'Книги', to:'/books', icon: AiFillBook}
 ]

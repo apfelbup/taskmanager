@@ -36,7 +36,7 @@ const Steps = memo(({activeTaskId}:any) => {
         <div className={styles.steps}>
             <div className={styles.create}>
                 <input  type="text" placeholder='Добавить шаг' value={input} onChange={(e) => setInput(e.target.value)}/>
-                <button onClick={handleSteps}>+</button>
+                <button onClick={handleSteps} aria-label="создать шаг">+</button>
             </div>
             <ul className={styles.stepsList}>
                 {steps?.map(item => <Step key={item.id} id={item.id} content={item.content} completed={item.completed} handleDelete={handleDelete} handleCompleted={handleCompleted}/>)}

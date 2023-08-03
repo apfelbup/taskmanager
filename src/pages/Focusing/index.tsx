@@ -3,11 +3,11 @@ import styles from './focusing.module.scss'
 import { useState } from "react";
 
 import { useAppSelector,useAppDispatch } from "../../hooks/reduxhooks";
-import { updateDate, updateTimeStatistic } from "../../redux/slices/statisticSlice";
+import { updateTimeStatistic } from "../../redux/slices/statisticSlice";
 import { stopTimer } from "../../redux/slices/timerSlice";
 
-import { formatWeek } from "../../helpers/formatWeek";
-import { getDate, getMonth, getWeekOfMonth } from "date-fns";
+import { formatWeek } from "../../helpers/formatWeek/formatWeek";
+import { getWeekOfMonth } from "date-fns";
 
 import { DAYS } from "../../assets/constants";
 import { useWindowResize } from "../../hooks/useWindowResize";
@@ -31,16 +31,13 @@ const Focusing = () => {
         if(time>0){
             const date = new Date();
 
-            const dayOfMonth = getDate(date);
             const weekOfMonth = getWeekOfMonth(date);
-            const month = getMonth(date);
 
             const day = DAYS[date.getDay()];
             const week = formatWeek(weekOfMonth);
 
 
             dispatch(updateTimeStatistic({type, time, day, week}));
-            dispatch(updateDate({dayOfMonth, weekOfMonth, month}));
         }
     }
 

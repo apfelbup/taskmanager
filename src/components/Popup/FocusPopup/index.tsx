@@ -24,7 +24,7 @@ const FocusPopup = ({setPopup, setType}:IFocusPopup) => {
 
     const timerStartHandler = () => {
 
-        if(Number(time) < 1 || Number(time)>180){
+        if(Number(time) < 1 || Number(time)>180 || !time.length){
             setIsError(true);
             return;
         } else {
@@ -49,10 +49,12 @@ const FocusPopup = ({setPopup, setType}:IFocusPopup) => {
                 <Radio handler={setType} options={TASK_TYPES}/>
             </div>
             <div className={styles.deadLine}>
-                <p>Окончание через:</p>
+                <label htmlFor="timerEnd">
+                <span>Окончание через:</span>
                 {isError && <p className={styles.error}>Выберите корректное время</p>}
-                <input onChange={(e)=> setTime(e.target.value)} min="1" max="180" type="number" defaultValue={60}/>
-                <p>минут.</p>
+                <input onChange={(e)=> setTime(e.target.value)} min="1" max="180" type="number" id="timerEnd" placeholder='60' defaultValue={60}/>
+                <span>минут.</span>
+                </label>
             </div> 
 
             <button onClick={timerStartHandler} className={styles.start}>

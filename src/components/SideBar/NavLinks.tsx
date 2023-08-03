@@ -18,6 +18,7 @@ const NavLinks = () => {
             <nav key={item.name}>
             <NavLink
             to={item.to}
+            aria-label={item.name}
             style={({ isActive }) => {return {color: isActive ? "#AA68C2" : ""}}}
             >
             {size > 1024 ? item.name : <item.icon/>}

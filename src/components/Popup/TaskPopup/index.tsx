@@ -7,7 +7,7 @@ import {v4 as uuid} from 'uuid';
 import { TASK_TYPES } from '../../../assets/constants';
 
 import Selection from '../../Selection';
-import formatDate from '../../../helpers/formatDate';
+import {formatDate} from '../../../helpers/formatDate/formatDate';
 
 interface ITaskPopup {
     handler: () => void;

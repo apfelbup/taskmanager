@@ -7,7 +7,6 @@ import BooksPopup from './BooksPopup';
 
 
 
-
 const Popup = ({...props}:any) => {
     const {type} = props;
 

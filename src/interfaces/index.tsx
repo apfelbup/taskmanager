@@ -113,6 +113,7 @@ export interface IStatistic {
     dayOfMonth:number,
     weekOfMonth:number,
     month:number,
+    stats:number,
 
     statistic: {
         daily:statisticTypes,

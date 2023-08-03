@@ -1,5 +1,4 @@
 
-import styles from './index.module.scss';
 import Select from 'react-select';
 
 const customStyles = {
@@ -41,7 +40,7 @@ const Selection = ({options, handler, defaultValue={}}) => {
 
     return (
         <Select 
-          onChange={(e)=> {handler(e?.label)}} 
+          onChange={(e)=> {handler(e.label)}} 
           defaultValue={defaultValue ? defaultValue : {
             value:options[0].value,
             label:options[0].title
@@ -49,7 +48,6 @@ const Selection = ({options, handler, defaultValue={}}) => {
 
           state = {defaultValue}
           styles = { customStyles } 
-          className={styles.customSelect} 
           options={options.map((option) => ({ value: option.value, label: option.title }))}>
         </Select>
     )

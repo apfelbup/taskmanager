@@ -24,12 +24,14 @@ const Star = ({ value, id, rating, setHover, hover }:IStar) => {
         onClick={ratingHandler}
         onMouseEnter={() => setHover(value)}
         onMouseLeave={() => setHover(null)}
+        role="button"
         >
         <svg
             fill={value <= (hover || rating) ? '#AA68C2' : '#AEAEAE'}
             height='30px'
             viewBox="0 0 25 25"
             width='30px'
+            data-testid="svg"
         >
         <polygon
             strokeWidth="0"

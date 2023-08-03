@@ -25,18 +25,21 @@ const Statistic = () => {
         const date = new Date();
 
         if(getDate(date) !== dayOfMonth){
-            dispatch(resetDailyStatistic());
+            dispatch(resetDailyStatistic(getDate(date)));
+            console.log(getDate(date), dayOfMonth)
         }
         if(getWeekOfMonth(date) !== weekOfMonth){
-            dispatch(resetWeeklyStatistic());
+            dispatch(resetWeeklyStatistic(getWeekOfMonth(date)));
+            console.log(getWeekOfMonth(date), weekOfMonth)
         }
         if(getMonth(date) !== month){
-            dispatch(resetMonthlyStatistic());
+            dispatch(resetMonthlyStatistic(getMonth(date)));
+            console.log(getMonth(date), month)
         }
     }, []) 
 
     return(
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper}> 
             <div className={styles.box}> 
             <Header/>
             <div className={styles.statistic}>

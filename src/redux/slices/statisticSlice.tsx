@@ -8,6 +8,7 @@ const initialState:IStatistic = {
     dayOfMonth:0,
     weekOfMonth:0,
     month:0,
+    stats:0,
     statistic:{
         daily:{
             work:0,
@@ -24,13 +25,13 @@ const initialState:IStatistic = {
     },
     completedTasks:{
         weekly:{
+            sun:[],
             mon:[],
             tue:[],
             wed:[],
             thu:[],
             fri:[],
-            sat:[],
-            sun:[]
+            sat:[]
         },
         monthly: {
             first: [],
@@ -42,13 +43,13 @@ const initialState:IStatistic = {
     },
     time:{
         weekly:{
+            sun:0,
             mon:0,
             tue:0,
             wed:0,
             thu:0,
             fri:0,
-            sat:0,
-            sun:0
+            sat:0
         },
         monthly: {
             first: 0,
@@ -75,42 +76,33 @@ const statisticSlice = createSlice({
             state.time.monthly[action.payload.week!] = state.time.monthly[action.payload.week!] + Number(action.payload.time);
         },
         updateTasksStatistic:(state,action:PayloadAction<{id:string | undefined, day:string, week:string | undefined}>)=>{
-                if(!state.completedTasks.weekly[action.payload.day].find((item) => item.id === action.payload.id)){
-                    state.completedTasks.weekly[action.payload.day]?.push({...action.payload});
-                    state.completedTasks.monthly[action.payload.week!]?.push({...action.payload});
+                if(!state.completedTasks.weekly[action.payload.day].find((item) => item === action.payload.id)){
+                    state.stats = state.stats + 1;
+                    console.log(state.stats);
+                    state.completedTasks.weekly[action.payload.day]?.push(action.payload.id);
+                    state.completedTasks.monthly[action.payload.week!]?.push(action.payload.id); 
                 }
             
         },
-        updateDate:(state, action:PayloadAction<{dayOfMonth:number, weekOfMonth:number, month:number}>) => {
-            if(state.dayOfMonth === 0){
-                state.dayOfMonth = action.payload.dayOfMonth;
-            }
-            if(state.weekOfMonth === 0){
-                state.weekOfMonth = action.payload.weekOfMonth;
-            }
-            if(state.month === 0){
-                state.month = action.payload.month;
-            }
-        },
-        resetDailyStatistic: (state) => {
+        resetDailyStatistic: (state, action) => {
             state.dailyTotalTime = initialState.dailyTotalTime;
             state.statistic.daily = initialState.statistic.daily;
 
-            state.dayOfMonth = initialState.dayOfMonth;
+            state.dayOfMonth = action.payload;
         },
-        resetWeeklyStatistic: (state) => {
+        resetWeeklyStatistic: (state, action) => {
             state.weeklyTotalTime = initialState.weeklyTotalTime;
             state.statistic.weekly = initialState.statistic.weekly;
             state.time.weekly = initialState.time.weekly;
             state.completedTasks.weekly = initialState.completedTasks.weekly;
 
-            state.weekOfMonth = initialState.weekOfMonth;
+            state.weekOfMonth = action.payload;
         },
-        resetMonthlyStatistic: (state) => {
+        resetMonthlyStatistic: (state, action) => {
             state.time.monthly = initialState.time.monthly;
             state.completedTasks.monthly = initialState.completedTasks.monthly;
 
-            state.month = initialState.month;
+            state.month = action.payload;
         }
     }
 });
@@ -120,7 +112,6 @@ export const {
     updateTasksStatistic,
     resetDailyStatistic,
     resetWeeklyStatistic,
-    resetMonthlyStatistic,
-    updateDate
+    resetMonthlyStatistic
 } = statisticSlice.actions;
 export default statisticSlice.reducer

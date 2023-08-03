@@ -32,7 +32,7 @@ function App() {
     <div className={styles.app}>
       <SideBar />
       <Routes>
-        <Route path='/tasks' element={<Tasks/>}/>
+        <Route path='/' element={<Tasks/>}/>
         <Route path='/statistic' element={<Statistic/>}/>
         <Route path='/books' element={<Books/>}/>
       </Routes>

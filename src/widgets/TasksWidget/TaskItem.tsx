@@ -1,4 +1,4 @@
-import { taskTypeColor } from '../../helpers/taskTypeColor';
+import { convertTaskColor } from '../../helpers/convertTaskColor/convertTaskColor';
 import { useAppSelector } from '../../hooks/reduxhooks'
 import styles from './stlyes.module.scss'
 
@@ -8,7 +8,7 @@ const TaskItem = ({title, id}) => {
     const {tasks} = useAppSelector(state=> state.tasks);
     const taskAmount = tasks.filter(item=> item.type === title);
     const tasksDone = taskAmount.filter(item=> item.status === 'Выполнено');
-    const taskColor = taskTypeColor(title); 
+    const taskColor = convertTaskColor(title); 
 
     return(
         <li className={styles.taskType} key={id}>

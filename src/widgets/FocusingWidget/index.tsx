@@ -38,7 +38,7 @@ export const options = {
 
 
 
-const FocusingWidget = () => {  
+const FocusingWidget = () => {   
     const {weekly, monthly} = useAppSelector(state=> state.statistic.time);
     const [type, setType] = useState<string>('weekly');
 
@@ -52,10 +52,10 @@ const FocusingWidget = () => {
             <Bar
             options={options} 
             data={{
-                labels: type === 'weekly' ? ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'] : ['1-ая неделя', '2-ая неделя', '3-ая неделя', '4-ая неделя', '5-ая неделя'],
+                labels: type === 'weekly' ? ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'] : ['1-ая неделя', '2-ая неделя', '3-ая неделя', '4-ая неделя', '5-ая неделя'],
                 datasets: [
                 {        
-                    data:type === 'weekly' ? [weekly.mon, weekly.tue, weekly.wed, weekly.thu, weekly.fri, weekly.sat, weekly.sun] : [monthly.first, monthly.second, monthly.third, monthly.fourth, monthly.fifth],
+                    data:type === 'weekly' ? [weekly.sun, weekly.mon, weekly.tue, weekly.wed, weekly.thu, weekly.fri, weekly.sat] : [monthly.first, monthly.second, monthly.third, monthly.fourth, monthly.fifth],
                     label: 'время фокусировки',
                     backgroundColor: 'rgba(170, 104, 194, 1)',
                 }
